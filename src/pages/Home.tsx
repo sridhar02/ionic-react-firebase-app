@@ -12,10 +12,14 @@ import {
   IonItemOption,
   IonAvatar,
   IonLabel,
+  IonButton,
+  IonIcon,
 } from "@ionic/react";
 import React from "react";
 import ExploreContainer from "../components/ExploreContainer";
 import "./Home.css";
+
+import {star} from "ionicons/icons"
 
 const arr = [
   { name: "sridhar", description: "Hello world!" },
@@ -68,6 +72,10 @@ const Home: React.FC = () => {
             </IonItemSliding>
           ))}
         </IonList>
+        <IonButton expand="full" color="secondary" className="ion-padding">
+          <IonIcon slot="end" icon={star}></IonIcon>
+          Submit
+        </IonButton>
       </IonContent>
     </IonPage>
   );
