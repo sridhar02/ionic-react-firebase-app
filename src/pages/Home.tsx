@@ -14,12 +14,13 @@ import {
   IonLabel,
   IonButton,
   IonIcon,
+  IonInput,
 } from "@ionic/react";
-import React from "react";
+import React, { useState } from "react";
 import ExploreContainer from "../components/ExploreContainer";
 import "./Home.css";
 
-import {star} from "ionicons/icons"
+import { star } from "ionicons/icons";
 
 const arr = [
   { name: "sridhar", description: "Hello world!" },
@@ -38,6 +39,7 @@ const arr = [
 ];
 
 const Home: React.FC = () => {
+  const [state, setstate] = useState("");
   return (
     <IonPage>
       <IonHeader>
@@ -47,35 +49,6 @@ const Home: React.FC = () => {
       </IonHeader>
       <IonContent>
         <IonTitle class="ion-padding">Ionic is interesting!!!!</IonTitle>
-        <IonList>
-          {arr.map((elem, i) => (
-            <IonItemSliding key={elem.name}>
-              <IonItem>
-                <IonAvatar>
-                  <img src={`//unsplash.it//${400 + i}`} alt="random logo" />
-                </IonAvatar>
-
-                <IonLabel className="ion-padding">
-                  <h2>{elem.name}</h2>
-                  <h3>{elem.description}</h3>
-                  <p>Some helper text!!!</p>
-                </IonLabel>
-              </IonItem>
-
-              <IonItemOptions side="end">
-                <IonItemOption
-                  onClick={() => alert("are you sure want to delete")}
-                >
-                  Delete
-                </IonItemOption>
-              </IonItemOptions>
-            </IonItemSliding>
-          ))}
-        </IonList>
-        <IonButton expand="full" color="secondary" className="ion-padding">
-          <IonIcon slot="end" icon={star}></IonIcon>
-          Submit
-        </IonButton>
       </IonContent>
     </IonPage>
   );
